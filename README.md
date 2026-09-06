@@ -39,11 +39,13 @@ python finetuning02.py
 ```
 
 Both scripts download their model and dataset from the Hugging Face Hub on first run
-(roughly 1 GB in total, cached under `~/.cache/huggingface`). No account, token or API
+(about 1.3 GB in total, cached under `~/.cache/huggingface`). No account, token or API
 key is required.
 
-**Requirements:** Python 3.9+ and about 4 GB of free disk space. A GPU is optional —
-see [Running on a GPU](#running-on-a-gpu).
+**Requirements:** Python 3.10 or newer — verified on 3.12, and note that current
+`scikit-learn` wheels require 3.11+. Budget roughly **4 GB of free disk space**: ~1.3 GB
+of downloads plus ~2.6 GB of training checkpoints. A GPU is optional — see
+[Running on a GPU](#running-on-a-gpu).
 
 ---
 
@@ -114,7 +116,7 @@ Two independent measurements are taken, and the distinction is worth understandi
 ### Output
 
 Checkpoints are written to `models/mpnet-base-all-nli-triplet/` (git-ignored;
-`save_total_limit=2` keeps only the two most recent).
+`save_total_limit=2` keeps only the two most recent, about 1.3 GB in total).
 
 ---
 
@@ -182,7 +184,9 @@ makes the from-scratch version trustworthy.
 
 ### Output
 
-Checkpoints are written to `./results/` (git-ignored).
+Checkpoints are written to `./results/` (git-ignored, about 1.3 GB). Unlike
+`finetuning01.py` this script sets no `save_total_limit`, so checkpoints accumulate if
+you raise the epoch count.
 
 ---
 
