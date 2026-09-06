@@ -1,0 +1,17 @@
+# Core deep-learning stack
+torch>=2.2
+transformers>=5.0
+accelerate>=1.1.0
+
+# Datasets and tokenisation
+datasets>=4.0
+huggingface-hub>=1.0
+
+# finetuning01.py: embedding fine-tuning
+sentence-transformers>=5.0
+
+# finetuning01.py: cosine-distance evaluation helper
+scikit-learn>=1.4
+
+# finetuning02.py: manual cross-entropy implementation
+numpy>=1.26
