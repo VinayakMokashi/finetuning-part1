@@ -67,6 +67,9 @@ class FineTuneSentimentClassifier:
         num_examples = 0
         with torch.no_grad():
             for inputs in eval_dataloader:
+                inputs = {k: v.to(self.trainer.args.device) for k, v in inputs.items()
+                          if isinstance(v, torch.Tensor)}
+
                 labels = inputs.pop("labels")
                 batch_size = labels.shape[0]
 
