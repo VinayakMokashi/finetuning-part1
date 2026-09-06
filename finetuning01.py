@@ -113,6 +113,12 @@ class FineTuneEmbeddingModel:
 
 if __name__ == "__main__":
     fine_tune_embedding = FineTuneEmbeddingModel()
+
     eval_before = fine_tune_embedding.evaluate_cosine_accuracy(fine_tune_embedding.test_dataset)
+    print(f"Triplet accuracy on the held-out test split BEFORE fine-tuning: {eval_before:.4f}")
+
     fine_tune_embedding.train_model()
+
     eval_after = fine_tune_embedding.evaluate_cosine_accuracy(fine_tune_embedding.test_dataset)
+    print(f"Triplet accuracy on the held-out test split AFTER  fine-tuning: {eval_after:.4f}")
+    print(f"Absolute improvement: {eval_after - eval_before:+.4f}")

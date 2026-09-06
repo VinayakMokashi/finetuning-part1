@@ -131,6 +131,12 @@ class FineTuneSentimentClassifier:
 
 if __name__ == "__main__":
     sentiment_classifier = FineTuneSentimentClassifier()
+
     eval_loss_before = sentiment_classifier.evaluate_loss()
+    print(f"Eval cross-entropy loss BEFORE fine-tuning: {eval_loss_before:.4f}")
+
     sentiment_classifier.train_model()
+
     eval_loss_after = sentiment_classifier.evaluate_loss()
+    print(f"Eval cross-entropy loss AFTER  fine-tuning: {eval_loss_after:.4f}")
+    print(f"Absolute change: {eval_loss_after - eval_loss_before:+.4f}")
