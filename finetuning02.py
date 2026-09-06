@@ -25,7 +25,7 @@ class FineTuneSentimentClassifier:
         return AutoModelForSequenceClassification.from_pretrained(self.model_name, num_labels=2)
     
     def load_dataset(self):
-        return load_dataset("imdb")
+        return load_dataset("stanfordnlp/imdb")
     
     def create_train_subset(self):
         return self.dataset["train"].shuffle(seed=42).select(range(500))
