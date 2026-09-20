@@ -337,9 +337,9 @@ are deliberately untracked — they are large and fully reproducible.
 
 ## Credits
 
-Coursework from Week 7 (Fine-Tuning) of a GenAI course, following *Hands-On Large
-Language Models* by Jay Alammar and Maarten Grootendorst. Models and datasets are the
-property of their respective authors and carry their own licenses.
+The approach follows *Hands-On Large Language Models* by Jay Alammar and Maarten
+Grootendorst. Models and datasets are the property of their respective authors and
+carry their own licenses.
 
 ## License
 
