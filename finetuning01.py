@@ -5,9 +5,9 @@ from sentence_transformers import (
     SentenceTransformerTrainingArguments,
     SentenceTransformerModelCardData,
 )
-from sentence_transformers.losses import MultipleNegativesRankingLoss
-from sentence_transformers.training_args import BatchSamplers
-from sentence_transformers.evaluation import TripletEvaluator
+from sentence_transformers.sentence_transformer.losses import MultipleNegativesRankingLoss
+from sentence_transformers.sentence_transformer.training_args import BatchSamplers
+from sentence_transformers.sentence_transformer.evaluation import TripletEvaluator
 import torch
 from sklearn.metrics.pairwise import paired_cosine_distances
 
